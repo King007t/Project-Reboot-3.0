@@ -1295,7 +1295,7 @@ DWORD WINAPI RestartThread(LPVOID)
 void AFortPlayerController::ClientOnPawnDiedHook(AFortPlayerController* PlayerController, void* DeathReport)
 {
 	// --- VBucks on win ---
-	if (Globals::bEnableVbucks)
+	if (Globals::bEnableApi)
 	{
 		auto AllPlayerStates = UGameplayStatics::GetAllActorsOfClass(GetWorld(), AFortPlayerStateAthena::StaticClass());
 
@@ -1311,7 +1311,7 @@ void AFortPlayerController::ClientOnPawnDiedHook(AFortPlayerController* PlayerCo
 				std::string reason = "Win";
 
 				std::string apiUrl1 = Globals::VbucksBaseUrl +
-					"?apikey=" + Globals::VbucksApiKey +
+					"?apikey=" + Globals::ApiKey +
 					"&username=" + PlayerName +
 					"&reason=" + reason;
 
@@ -1427,14 +1427,14 @@ void AFortPlayerController::ClientOnPawnDiedHook(AFortPlayerController* PlayerCo
 
 		if (KillerPlayerState && KillerPlayerState != DeadPlayerState)
 		{
-			// --- VBucks on Kill ---
-			if (Globals::bEnableVbucks)
+			// --- Battlepass tier on Kill ---
+			if (Globals::bEnableApi)
 			{
 				std::string username = KillerPlayerState->GetPlayerName().ToString();
 				std::string reason = "Kill";
 
-				std::string apiUrl = Globals::VbucksBaseUrl +
-					"?apikey=" + Globals::VbucksApiKey +
+				std::string apiUrl = Globals::BpTiersBaseUrl +
+					"?apikey=" + Globals::ApiKey +
 					"&username=" + username +
 					"&reason=" + reason;
 

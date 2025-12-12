@@ -25,10 +25,11 @@ namespace Globals
     extern inline int  AmountOfListens = 0; // TODO: Switch to this for LastNum
     extern inline bool bDeveloperMode = false;
 
-    // ---------------- VBucks / API config ----------------
-    extern inline bool bEnableVbucks = false;
-    extern inline std::string VbucksApiKey  = "ur-api-key";
+    // ---------------- VBucks / Battlepass / API config ----------------
+    extern inline bool bEnableApi = false;
+    extern inline std::string ApiKey  = "ur-api-key";
     extern inline std::string VbucksBaseUrl = "http://127.0.0.1:3551/api/reload/vbucks";
+    extern inline std::string BpTiersBaseUrl = "http://127.0.0.1:3551/api/reload/bptiers";
 
     // ---------------- Auto restart config ----------------
     extern inline bool bAutoRestart = false;
