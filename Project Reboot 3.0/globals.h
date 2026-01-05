@@ -28,8 +28,8 @@ namespace Globals
     // ---------------- VBucks / Battlepass / API config ----------------
     extern inline bool bEnableApi = false;
     extern inline std::string ApiKey  = "ur-api-key";
-    extern inline std::string VbucksBaseUrl = "http://127.0.0.1:3551/api/reload/vbucks";
-    extern inline std::string BpTiersBaseUrl = "http://127.0.0.1:3551/api/reload/bptiers";
+    extern inline std::string WinBaseUrl = "http://127.0.0.1:3551/api/reload/vbucks";
+    extern inline std::string KillBaseUrl = "http://127.0.0.1:3551/api/reload/bptiers";
 
     // ---------------- Auto restart config ----------------
     extern inline bool bAutoRestart = false;
